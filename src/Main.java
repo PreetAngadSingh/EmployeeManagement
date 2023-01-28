@@ -46,6 +46,25 @@ public class Main {
     }
     public static void addBill(){
         System.out.println("Inside addBill");
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter company name");
+        String company = sc.next();
+
+        System.out.println("Enter Bill Amount");
+        double billAmount = sc.nextDouble();
+
+        System.out.println("Enter the month");
+        String month = sc.next();
+
+        System.out.println("Enter the date");
+        int date = sc.nextInt();
+
+        System.out.println("Enter the month");
+        int year = sc.nextInt();
+        
+        arr[count] = new Bill(company, billAmount, month, date, year);
+        count++;
     }
     public static void issueCheque() {
         System.out.println("Inside issueCheque");
