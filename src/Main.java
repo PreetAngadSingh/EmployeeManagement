@@ -50,6 +50,7 @@ public class Main {
 
         System.out.println("Enter company name");
         String company = sc.next();
+        sc.next();
 
         System.out.println("Enter Bill Amount");
         double billAmount = sc.nextDouble();
@@ -60,12 +61,13 @@ public class Main {
         System.out.println("Enter the date");
         int date = sc.nextInt();
 
-        System.out.println("Enter the month");
+        System.out.println("Enter the year");
         int year = sc.nextInt();
-        
+
         arr[count] = new Bill(company, billAmount, month, date, year);
         count++;
     }
+
     public static void issueCheque() {
         System.out.println("Inside issueCheque");
         for (Object obj : arr) {
@@ -82,7 +84,7 @@ public class Main {
                     System.out.println("Cheque #" + count_cheque);
                     System.out.println("Payable to: " + bill.company);
                     System.out.println("Amount: $" + bill.billAmount);
-                    System.out.println("Due Date: $" + bill.dueDate);
+                    System.out.println("Due Date: " + bill.dueDate);
                     System.out.println();
                 }
                 count_cheque++;
