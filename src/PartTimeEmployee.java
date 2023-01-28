@@ -2,6 +2,7 @@ public class PartTimeEmployee extends Employee{
     int echelon;
     double hourlyRate;
     double hours;
+    static int[] echelonArr={15,20,25,30,40};
 
     PartTimeEmployee(String firstName, String lastName, int age, int id, int echelon, double hours){
         super(firstName, lastName, age, id);
@@ -11,20 +12,10 @@ public class PartTimeEmployee extends Employee{
     }
 
     double assignHourlyRate(int echelon){
-        switch(echelon){
-            case 1:
-                return 15;
-            case 2:
-                return 20;
-            case 3:
-                return 25;
-            case 4:
-                return 30;
-            case 5:
-                return 40;
-            default:
-                return 0;
-        }
+        if(echelon <6)
+        return echelonArr[echelon-1];
+        else
+        return 0;
     }
     public double monthlySalary() {
         return hourlyRate * hours;
