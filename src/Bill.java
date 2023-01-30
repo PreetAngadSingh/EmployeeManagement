@@ -6,6 +6,6 @@ public class Bill {
     Bill(String company, double billAmount, String month, int date,int year){
         this.company = company;
         this.billAmount = billAmount;
-        dueDate = date + " " + month + " " + year;
+        dueDate = date + " " + month + " " + year;          //converting date month and year into a String
     }
 }

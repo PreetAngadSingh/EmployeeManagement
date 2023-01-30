@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
+    //making an object array which stores employees as well as bills
     static Object[] arr = new Object[20];
     static int count=0;
     static int count_cheque = 1;
@@ -21,16 +22,16 @@ public class Main {
         int id = sc.nextInt();
 
         System.out.println("Is the employee full time? (Y/N)");
-        char full;
+        char isFulltime;
         while (true) {
-            full = sc.next().charAt(0);
-            if (Character.toLowerCase(full)=='y') {
+            isFulltime = sc.next().charAt(0);
+            if (Character.toLowerCase(isFulltime)=='y') {
                 System.out.println("Enter salary");
                 double salary = sc.nextDouble();
                 arr[count] = new FullTimeEmployee(firstName, lastName, age, id, salary);
                 count++;
                 break;
-            } else if(Character.toLowerCase(full)=='n'){
+            } else if(Character.toLowerCase(isFulltime)=='n'){
                 System.out.println("Enter echelon");
                 int echelon = sc.nextInt();
                 System.out.println("Enter hours");
@@ -45,7 +46,6 @@ public class Main {
         }
     }
     public static void addBill(){
-        System.out.println("Inside addBill");
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter company name");
@@ -69,9 +69,9 @@ public class Main {
     }
 
     public static void issueCheque() {
-        System.out.println("Inside issueCheque");
         for (Object obj : arr) {
             if (obj != null) {
+                //check if the object belongs to Employee or Bill
                 if (obj instanceof Employee) {
                     Employee employee = (Employee) obj;
                     System.out.println("Cheque :" + count_cheque);
@@ -94,6 +94,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int input;
+        //Getting input from user
         while (true) {
             System.out.print("Enter a number between 1 and 4: \n" +
                     "1. Add an employee\n" +
