@@ -1,8 +1,14 @@
+/*
+ * Submitted by:
+ * Preet Angad Singh Nanda - 40234930
+ * Naman Kumar - 40245246
+ */
+
 import java.util.Scanner;
 
 public class Main {
     //making an object array which stores employees as well as bills
-    static Object[] arr = new Object[20];
+    static Object[] recordArr = new Object[20];
     static int count=0;
     static int count_cheque = 1;
 
@@ -31,7 +37,7 @@ public class Main {
             if (Character.toLowerCase(isFulltime)=='y') {
                 System.out.println("Enter salary");
                 double salary = sc.nextDouble();
-                arr[count] = new FullTimeEmployee(firstName, lastName, age, id, salary);
+                recordArr[count] = new FullTimeEmployee(firstName, lastName, age, id, salary);
                 count++;
                 break;
             } else if(Character.toLowerCase(isFulltime)=='n'){
@@ -39,7 +45,7 @@ public class Main {
                 int echelon = sc.nextInt();
                 System.out.println("Enter hours");
                 double hours = sc.nextDouble();
-                arr[count] = new PartTimeEmployee(firstName, lastName, age, id, echelon, hours);
+                recordArr[count] = new PartTimeEmployee(firstName, lastName, age, id, echelon, hours);
                 count++;
                 break;
             }
@@ -69,13 +75,13 @@ public class Main {
         System.out.println("Enter the year");
         int year = sc.nextInt();
 
-        arr[count] = new Bill(company, billAmount, month, date, year);
+        recordArr[count] = new Bill(company, billAmount, month, date, year);
         count++;
     }
 
     //function to display cheque and bill amounts
     public static void issueCheque() {
-        for (Object obj : arr) {
+        for (Object obj : recordArr) {
             if (obj != null) {
                 //check if the object belongs to Employee or Bill
                 if (obj instanceof Employee) {
