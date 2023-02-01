@@ -1,3 +1,4 @@
+//this is child class and extends Employee class
 public class PartTimeEmployee extends Employee {
     int echelon;
     double hourlyRate;
@@ -12,6 +13,7 @@ public class PartTimeEmployee extends Employee {
         hourlyRate = assignHourlyRate(echelon);
     }
 
+    //this method assigns the hourly rate as per the echelon
     double assignHourlyRate(int echelon) {
         if (echelon < 6)
             return echelonArr[echelon - 1];
@@ -19,6 +21,7 @@ public class PartTimeEmployee extends Employee {
             return 0;
     }
 
+    //this method overrides the monthlySalary in parent class
     public double monthlySalary() {
         return hourlyRate * hours;
     }

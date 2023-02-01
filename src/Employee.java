@@ -1,3 +1,4 @@
+//this is Employee parent Class
 public class Employee implements salaryInterface{
     String firstName;
     String lastName;

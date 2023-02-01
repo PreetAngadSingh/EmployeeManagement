@@ -5,6 +5,8 @@ public class Main {
     static Object[] arr = new Object[20];
     static int count=0;
     static int count_cheque = 1;
+
+    //function to add employee
     public static void addEmployee(){
         System.out.println("Please enter details of Employee");
         Scanner sc = new Scanner(System.in);
@@ -25,6 +27,7 @@ public class Main {
         char isFulltime;
         while (true) {
             isFulltime = sc.next().charAt(0);
+            //check if the employee is full time or part time
             if (Character.toLowerCase(isFulltime)=='y') {
                 System.out.println("Enter salary");
                 double salary = sc.nextDouble();
@@ -45,6 +48,8 @@ public class Main {
             }
         }
     }
+
+    //function to add Bill
     public static void addBill(){
         Scanner sc = new Scanner(System.in);
 
@@ -68,6 +73,7 @@ public class Main {
         count++;
     }
 
+    //function to display cheque and bill amounts
     public static void issueCheque() {
         for (Object obj : arr) {
             if (obj != null) {

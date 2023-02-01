@@ -1,3 +1,4 @@
+//this is child class and extends Employee class
 public class FullTimeEmployee extends Employee{
     private double salary;
 
@@ -7,6 +8,7 @@ public class FullTimeEmployee extends Employee{
         this.salary = salary;
     }
 
+    //this method overrides the monthlySalary in parent class
     public double monthlySalary() {
         return salary;
     }
