@@ -66,14 +66,22 @@ public class Main {
 
         System.out.println("Enter the month");
         String month = sc.next();
-
-        System.out.println("Enter the date");
-        int date = sc.nextInt();
+        int day;
+        while (true) {
+            System.out.println("Enter the day");
+            day = sc.nextInt();
+            if (day >= 1 && day <= 31) {
+                break;
+            } else {
+                System.out.println("Please enter a valid day between 0 to 31");
+            }
+        }
 
         System.out.println("Enter the year");
+
         int year = sc.nextInt();
 
-        recordArr[count] = new Bill(company, billAmount, month, date, year);
+        recordArr[count] = new Bill(company, billAmount, month, day, year);
         count++;
     }
 
@@ -84,16 +92,16 @@ public class Main {
                 // check if the object belongs to Employee or Bill
                 if (obj instanceof Employee) {
                     Employee employee = (Employee) obj;
-                    System.out.println("Cheque #:" + count_cheque);
-                    System.out.println("Employee ID :" + employee.id);
-                    System.out.println("Payable to :" + employee.firstName + " " + employee.lastName);
-                    System.out.println("Amount :$" + employee.monthlySalary());
+                    System.out.println("Cheque: #" + count_cheque);
+                    System.out.println("Employee ID: " + employee.id);
+                    System.out.println("Payable to: " + employee.firstName + " " + employee.lastName);
+                    System.out.println("Amount: $ " + employee.monthlySalary());
                     System.out.println();
                 } else if (obj instanceof Bill) {
                     Bill bill = (Bill) obj;
-                    System.out.println("Cheque #:" + count_cheque);
+                    System.out.println("Cheque: #" + count_cheque);
                     System.out.println("Payable to: " + bill.company);
-                    System.out.println("Amount: $" + bill.billAmount);
+                    System.out.println("Amount: $ " + bill.billAmount);
                     System.out.println("Due Date: " + bill.dueDate);
                     System.out.println();
                 }
