@@ -7,13 +7,13 @@
 import java.util.Scanner;
 
 public class Main {
-    //making an object array which stores employees as well as bills
+    // making an object array which stores employees as well as bills
     static Object[] recordArr = new Object[20];
-    static int count=0;
+    static int count = 0;
     static int count_cheque = 1;
 
-    //function to add employee
-    public static void addEmployee(){
+    // function to add employee
+    public static void addEmployee() {
         System.out.println("Please enter details of Employee");
         Scanner sc = new Scanner(System.in);
 
@@ -33,14 +33,14 @@ public class Main {
         char isFulltime;
         while (true) {
             isFulltime = sc.next().charAt(0);
-            //check if the employee is full time or part time
-            if (Character.toLowerCase(isFulltime)=='y') {
+            // check if the employee is full time or part time
+            if (Character.toLowerCase(isFulltime) == 'y') {
                 System.out.println("Enter salary");
                 double salary = sc.nextDouble();
                 recordArr[count] = new FullTimeEmployee(firstName, lastName, age, id, salary);
                 count++;
                 break;
-            } else if(Character.toLowerCase(isFulltime)=='n'){
+            } else if (Character.toLowerCase(isFulltime) == 'n') {
                 System.out.println("Enter echelon");
                 int echelon = sc.nextInt();
                 System.out.println("Enter hours");
@@ -48,20 +48,18 @@ public class Main {
                 recordArr[count] = new PartTimeEmployee(firstName, lastName, age, id, echelon, hours);
                 count++;
                 break;
-            }
-                else {
+            } else {
                 System.out.println("Invalid input! Enter Y for Yes and N for No\n");
             }
         }
     }
 
-    //function to add Bill
-    public static void addBill(){
+    // function to add Bill
+    public static void addBill() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter company name");
         String company = sc.next();
-        sc.next();
 
         System.out.println("Enter Bill Amount");
         double billAmount = sc.nextDouble();
@@ -79,21 +77,21 @@ public class Main {
         count++;
     }
 
-    //function to display cheque and bill amounts
+    // function to display cheque and bill amounts
     public static void issueCheque() {
         for (Object obj : recordArr) {
             if (obj != null) {
-                //check if the object belongs to Employee or Bill
+                // check if the object belongs to Employee or Bill
                 if (obj instanceof Employee) {
                     Employee employee = (Employee) obj;
-                    System.out.println("Cheque :" + count_cheque);
+                    System.out.println("Cheque #:" + count_cheque);
                     System.out.println("Employee ID :" + employee.id);
-                    System.out.println("Payable to: " + employee.firstName + " " + employee.lastName);
-                    System.out.println("Amount: $" + employee.monthlySalary());
+                    System.out.println("Payable to :" + employee.firstName + " " + employee.lastName);
+                    System.out.println("Amount :$" + employee.monthlySalary());
                     System.out.println();
                 } else if (obj instanceof Bill) {
                     Bill bill = (Bill) obj;
-                    System.out.println("Cheque #" + count_cheque);
+                    System.out.println("Cheque #:" + count_cheque);
                     System.out.println("Payable to: " + bill.company);
                     System.out.println("Amount: $" + bill.billAmount);
                     System.out.println("Due Date: " + bill.dueDate);
@@ -103,10 +101,11 @@ public class Main {
             }
         }
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int input;
-        //Getting input from user
+        // Getting input from user
         while (true) {
             System.out.print("Enter a number between 1 and 4: \n" +
                     "1. Add an employee\n" +
@@ -115,7 +114,7 @@ public class Main {
                     "4. Exit\n");
             input = sc.nextInt();
             if (input >= 1 && input <= 4) {
-                switch (input){
+                switch (input) {
                     case 1:
                         addEmployee();
                         break;
@@ -132,8 +131,6 @@ public class Main {
                 System.out.println("Invalid input!");
             }
         }
-
-
 
     }
 }
