@@ -95,13 +95,13 @@ public class Main {
                     System.out.println("Cheque: #" + count_cheque);
                     System.out.println("Employee ID: " + employee.id);
                     System.out.println("Payable to: " + employee.firstName + " " + employee.lastName);
-                    System.out.println("Amount: $ " + employee.monthlySalary());
+                    System.out.println("Amount: $ " + employee.pay());
                     System.out.println();
                 } else if (obj instanceof Bill) {
                     Bill bill = (Bill) obj;
                     System.out.println("Cheque: #" + count_cheque);
                     System.out.println("Payable to: " + bill.company);
-                    System.out.println("Amount: $ " + bill.billAmount);
+                    System.out.println("Amount: $ " + bill.pay());
                     System.out.println("Due Date: " + bill.dueDate);
                     System.out.println();
                 }
