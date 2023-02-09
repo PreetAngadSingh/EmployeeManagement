@@ -41,7 +41,7 @@ public class Main {
                 count++;
                 break;
             } else if (Character.toLowerCase(isFulltime) == 'n') {
-                System.out.println("Enter echelon");
+                System.out.println("Enter echelon \n1 -> $15/hr | 2 -> $20/hr | 3 -> $25/hr | 4 -> $30/hr | 5 -> $40/hr");
                 int echelon = sc.nextInt();
                 System.out.println("Enter hours");
                 double hours = sc.nextDouble();
@@ -96,17 +96,13 @@ public class Main {
                     System.out.println("Employee ID: " + employee.id);
                     System.out.println("Payable to: " + employee.firstName + " " + employee.lastName);
                     System.out.println("Amount: $ " + employee.pay());
-                    System.out.println();
-                    System.out.println("*****************************");
-                    System.out.println();
+                    System.out.println("\n*****************************\n");
                 } else if (obj instanceof Bill) {
                     Bill bill = (Bill) obj;
                     System.out.println("Cheque: #" + count_cheque);
                     System.out.println("Payable to: " + bill.company);
                     System.out.println("Amount: $ " + bill.pay());
-                    System.out.println();
-                    System.out.println("*****************************");
-                    System.out.println();
+                    System.out.println("\n*****************************\n");
                 }
                 count_cheque++;
             }
