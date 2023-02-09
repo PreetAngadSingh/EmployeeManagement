@@ -97,12 +97,15 @@ public class Main {
                     System.out.println("Payable to: " + employee.firstName + " " + employee.lastName);
                     System.out.println("Amount: $ " + employee.pay());
                     System.out.println();
+                    System.out.println("*****************************");
+                    System.out.println();
                 } else if (obj instanceof Bill) {
                     Bill bill = (Bill) obj;
                     System.out.println("Cheque: #" + count_cheque);
                     System.out.println("Payable to: " + bill.company);
                     System.out.println("Amount: $ " + bill.pay());
-                    System.out.println("Due Date: " + bill.dueDate);
+                    System.out.println();
+                    System.out.println("*****************************");
                     System.out.println();
                 }
                 count_cheque++;
