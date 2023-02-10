@@ -1,3 +1,4 @@
+//this is Bill class
 public class Bill implements payable {
     String company;
     double billAmount;
