@@ -73,7 +73,7 @@ public class Main {
         double billAmount = sc.nextDouble();
 
         System.out.println("Enter the month");
-        String month = sc.nextLine();
+        String month = sc.next();
         int day;
         while (true) {
             System.out.println("Enter the day");
