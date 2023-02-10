@@ -17,10 +17,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter First Name");
-        String firstName = sc.next();
+        String firstName = sc.nextLine();
 
         System.out.println("Enter Last Name");
-        String lastName = sc.next();
+        String lastName = sc.nextLine();
 
         System.out.println("Enter Age");
         int age = sc.nextInt();
@@ -67,13 +67,13 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter company name");
-        String company = sc.next();
+        String company = sc.nextLine();
 
         System.out.println("Enter Bill Amount");
         double billAmount = sc.nextDouble();
 
         System.out.println("Enter the month");
-        String month = sc.next();
+        String month = sc.nextLine();
         int day;
         while (true) {
             System.out.println("Enter the day");
