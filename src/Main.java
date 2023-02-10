@@ -10,7 +10,6 @@ public class Main {
     // making an object array which stores employees as well as bills
     static Object[] recordArr = new Object[20];
     static int count = 0;
-    static int count_cheque = 1;
 
     // function to add employee
     public static void addEmployee() {
@@ -41,8 +40,17 @@ public class Main {
                 count++;
                 break;
             } else if (Character.toLowerCase(isFulltime) == 'n') {
-                System.out.println("Enter echelon \n1 -> $15/hr | 2 -> $20/hr | 3 -> $25/hr | 4 -> $30/hr | 5 -> $40/hr");
-                int echelon = sc.nextInt();
+                System.out
+                        .println("Enter echelon \n1 -> $15/hr | 2 -> $20/hr | 3 -> $25/hr | 4 -> $30/hr | 5 -> $40/hr");
+                int echelon;
+                while (true) {
+                    echelon = sc.nextInt();
+                    if (echelon >= 1 && echelon <= 5) {
+                        break;
+                    } else {
+                        System.out.println("Please enter a valid day between 1 to 5");
+                    }
+                }
                 System.out.println("Enter hours");
                 double hours = sc.nextDouble();
                 recordArr[count] = new PartTimeEmployee(firstName, lastName, age, id, echelon, hours);
@@ -87,26 +95,28 @@ public class Main {
 
     // function to display cheque and bill amounts
     public static void issueCheque() {
+        int cheque_number = 1;
         for (Object obj : recordArr) {
             if (obj != null) {
                 // check if the object belongs to Employee or Bill
                 if (obj instanceof Employee) {
                     Employee employee = (Employee) obj;
-                    System.out.println("Cheque: #" + count_cheque);
+                    System.out.println("Cheque: #" + cheque_number);
                     System.out.println("Employee ID: " + employee.id);
                     System.out.println("Payable to: " + employee.firstName + " " + employee.lastName);
                     System.out.println("Amount: $ " + employee.pay());
                     System.out.println("\n*****************************\n");
                 } else if (obj instanceof Bill) {
                     Bill bill = (Bill) obj;
-                    System.out.println("Cheque: #" + count_cheque);
+                    System.out.println("Cheque: #" + cheque_number);
                     System.out.println("Payable to: " + bill.company);
                     System.out.println("Amount: $ " + bill.pay());
                     System.out.println("\n*****************************\n");
                 }
-                count_cheque++;
+                cheque_number++;
             }
         }
+
     }
 
     public static void main(String[] args) {

@@ -15,10 +15,7 @@ public class PartTimeEmployee extends Employee {
 
     // this method assigns the hourly rate as per the echelon
     double assignHourlyRate(int echelon) {
-        if (echelon < 6)
-            return echelonArr[echelon - 1];
-        else
-            return 0;
+        return echelonArr[echelon - 1];
     }
 
     // this method overrides the monthlySalary in parent class
